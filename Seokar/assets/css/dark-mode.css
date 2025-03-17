@@ -1,0 +1,152 @@
+/*--------------------------------------------------------------
+# Dark Mode Styles for Seokar Theme
+--------------------------------------------------------------*/
+
+/* General Dark Mode Styles */
+body.dark-mode {
+    background-color: #1E1E1E;
+    color: #E0E0E0;
+}
+
+.dark-mode a {
+    color: #0073e6;
+}
+
+.dark-mode a:hover {
+    color: #ff5722;
+}
+
+/* Header Dark Mode */
+.dark-mode .site-header {
+    background-color: #1E1E1E;
+    border-bottom: 1px solid #333;
+}
+
+.dark-mode .site-title {
+    color: #E0E0E0;
+}
+
+.dark-mode .site-description {
+    color: #E0E0E0;
+}
+
+/* Navigation Dark Mode */
+.dark-mode .main-navigation ul li a {
+    color: #E0E0E0;
+}
+
+.dark-mode .main-navigation ul li a:hover {
+    background-color: #333;
+    color: #0073e6;
+}
+
+/* Footer Dark Mode */
+.dark-mode .site-footer {
+    background-color: #1E1E1E;
+    border-top: 1px solid #333;
+}
+
+.dark-mode .site-footer .widget-title {
+    color: #E0E0E0;
+}
+
+.dark-mode .site-footer ul li a {
+    color: #E0E0E0;
+}
+
+.dark-mode .site-footer ul li a:hover {
+    color: #0073e6;
+}
+
+.dark-mode .site-footer .site-info {
+    color: #E0E0E0;
+}
+
+/* Buttons Dark Mode */
+.dark-mode .button {
+    background-color: #0073e6;
+    color: #ffffff;
+}
+
+.dark-mode .button:hover {
+    background-color: #ff5722;
+}
+
+.dark-mode .button-secondary {
+    background-color: #333;
+    color: #E0E0E0;
+}
+
+.dark-mode .button-secondary:hover {
+    background-color: #0073e6;
+    color: #ffffff;
+}
+
+/* Cards Dark Mode */
+.dark-mode .card {
+    background-color: #333;
+    color: #E0E0E0;
+}
+
+.dark-mode .card h3 {
+    color: #0073e6;
+}
+
+.dark-mode .card p {
+    color: #E0E0E0;
+}
+
+/* Forms Dark Mode */
+.dark-mode .custom-form {
+    background-color: #333;
+    color: #E0E0E0;
+}
+
+.dark-mode .custom-form label {
+    color: #E0E0E0;
+}
+
+.dark-mode .custom-form input[type="text"],
+.dark-mode .custom-form input[type="email"],
+.dark-mode .custom-form input[type="password"],
+.dark-mode .custom-form textarea {
+    background-color: #1E1E1E;
+    color: #E0E0E0;
+    border-color: #555;
+}
+
+.dark-mode .custom-form input[type="submit"] {
+    background-color: #0073e6;
+    color: #ffffff;
+}
+
+.dark-mode .custom-form input[type="submit"]:hover {
+    background-color: #ff5722;
+}
+
+/* Tables Dark Mode */
+.dark-mode table {
+    background-color: #333;
+    color: #E0E0E0;
+}
+
+.dark-mode th,
+.dark-mode td {
+    border-color: #555;
+}
+
+.dark-mode th {
+    background-color: #1E1E1E;
+    color: #E0E0E0;
+}
+
+/* Responsive Dark Mode */
+@media (max-width: 768px) {
+    .dark-mode .site-header .site-title {
+        color: #E0E0E0;
+    }
+
+    .dark-mode .main-navigation ul li a {
+        color: #E0E0E0;
+    }
+}
