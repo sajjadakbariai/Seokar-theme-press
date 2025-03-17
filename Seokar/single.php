@@ -1,6 +1,6 @@
 <?php
 /**
- * Page Template for Seokar Theme
+ * Single Post Template for Seokar Theme
  *
  * @package Seokar
  */
@@ -11,18 +11,29 @@ get_header(); ?>
 
 <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
     <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-        <h1 class="page-title"><?php the_title(); ?></h1>
+        <h1 class="post-title"><?php the_title(); ?></h1>
+        
+        <div class="post-meta">
+            <span class="post-date"><?php echo get_the_date(); ?></span>
+            <span class="post-author"><?php the_author_posts_link(); ?></span>
+        </div>
 
-        <div class="page-content">
+        <div class="post-content">
             <?php the_content(); ?>
         </div>
 
-        <?php
-        // اگر دیدگاه‌ها فعال هستند یا دیدگاهی وجود دارد
-        if ( comments_open() || get_comments_number() ) :
+        <div class="post-tags">
+            <?php the_tags( 'برچسب‌ها: ', ', ', '' ); ?>
+        </div>
+
+        <div class="post-navigation">
+            <div class="previous"><?php previous_post_link(); ?></div>
+            <div class="next"><?php next_post_link(); ?></div>
+        </div>
+
+        <?php if ( comments_open() || get_comments_number() ) :
             comments_template();
-        endif;
-        ?>
+        endif; ?>
     </article>
 <?php endwhile; else : ?>
     <p>محتوایی یافت نشد.</p>
