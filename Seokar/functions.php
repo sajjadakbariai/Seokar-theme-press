@@ -11,3 +11,5 @@ add_action('wp_enqueue_scripts', 'seokar_enqueue_styles');
 
 // فراخوانی کلاس ثبت منو
 require_once get_template_directory() . '/inc/class-menu.php';
+// Load custom walker class.
+require_once get_template_directory() . '/inc/class-walker-menu.php';
