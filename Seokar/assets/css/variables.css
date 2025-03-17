@@ -1,0 +1,8 @@
+/* متغیرهای CSS */
+
+:root {
+    --primary-color: #0073aa;
+    --secondary-color: #005177;
+    --background-color: #f5f5f5;
+    --font-main: 'Vazir', sans-serif;
+}
