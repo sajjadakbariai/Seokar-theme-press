@@ -1,0 +1,12 @@
+/* Main Content Styles */
+.site-main {
+    padding: 20px;
+}
+.site-main h2 {
+    color: #333;
+    margin-bottom: 15px;
+}
+.site-main p {
+    color: #555;
+    line-height: 1.8;
+}
