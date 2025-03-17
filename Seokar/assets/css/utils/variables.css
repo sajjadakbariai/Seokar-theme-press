@@ -1,0 +1,12 @@
+/* Variables for Seokar Theme */
+:root {
+    --primary-color: #0057b8;
+    --secondary-color: #ffcb05;
+    --text-color: #333333;
+    --background-color: #ffffff;
+
+    --font-primary: 'IranSans', sans-serif;
+    --font-secondary: 'Vazir', sans-serif;
+
+    --border-radius: 4px;
+}
