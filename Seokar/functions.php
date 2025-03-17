@@ -1,6 +1,6 @@
 function seokar_enqueue_styles() {
     // بارگذاری استایل اصلی
-    wp_enqueue_style('seokar-style', get_template_directory_uri() . '/assets/css/style.css', [], '1.0.0');
+    wp_enqueue_style('seokar-style', get_template_directory_uri() . 'style.css', [], '1.0.0');
 
     // بارگذاری استایل RTL فقط برای زبان‌های راست‌چین
     if (is_rtl()) {
