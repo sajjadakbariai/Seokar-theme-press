@@ -1,0 +1,11 @@
+/* استایل‌های واکنش‌گرا */
+
+@media (max-width: 768px) {
+    .header {
+        padding: 10px;
+    }
+
+    .footer {
+        padding: 5px;
+    }
+}
