@@ -1,0 +1,143 @@
+/* 
+Theme Name: Seokar
+RTL Support: Yes
+*/
+
+/* تنظیم جهت کلی */
+body {
+    direction: rtl;
+    text-align: right;
+}
+
+/* ناوبری */
+.main-navigation ul {
+    flex-direction: row-reverse;
+}
+
+.main-navigation ul li {
+    margin-left: 0;
+    margin-right: 20px;
+}
+
+/* لینک‌ها */
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* تنظیمات فرم‌ها */
+input,
+button,
+textarea,
+select {
+    direction: rtl;
+    text-align: right;
+}
+
+/* تراز‌بندی متن */
+.text-left {
+    text-align: right;
+}
+
+.text-right {
+    text-align: left;
+}
+
+.text-center {
+    text-align: center;
+}
+
+/* تنظیم حاشیه‌ها و فاصله‌ها */
+.mt-10 { margin-top: 10px; }
+.mt-20 { margin-top: 20px; }
+.mb-10 { margin-bottom: 10px; }
+.mb-20 { margin-bottom: 20px; }
+.mr-10 { margin-left: 10px; }
+.mr-20 { margin-left: 20px; }
+.ml-10 { margin-right: 10px; }
+.ml-20 { margin-right: 20px; }
+
+/* فیلدهای فرم */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+textarea {
+    padding-right: 10px;
+}
+
+/* کامنت‌ها */
+.comment-list .comment-body {
+    text-align: right;
+}
+
+/* ابزارک‌ها */
+.widget ul {
+    padding-right: 0;
+}
+
+.widget ul li {
+    margin-right: 0;
+    margin-left: 0;
+}
+
+/* گالری تصاویر */
+.gallery-item {
+    margin-right: 0;
+    margin-left: 1rem;
+}
+
+/* کپشن تصاویر */
+.wp-caption-text {
+    text-align: right;
+}
+
+/* نوار اطلاع‌رسانی */
+.notification-bar {
+    text-align: right;
+}
+
+/* دکمه‌ها */
+button, .btn {
+    text-align: center;
+}
+
+/* دکمه حالت شب */
+.dark-mode-toggle {
+    direction: ltr;
+}
+
+.dark-mode-toggle::before {
+    left: auto;
+    right: 2px;
+}
+
+.dark-mode-toggle.active::before {
+    transform: translateX(-20px);
+}
+
+/* تنظیم فریم ورک‌های گرید */
+.grid {
+    direction: rtl;
+}
+
+.flex {
+    direction: rtl;
+}
+
+.justify-center {
+    justify-content: center;
+}
+
+.align-center {
+    align-items: center;
+}
+
+/* تنظیمات واکنش‌گرا */
+@media (max-width: 768px) {
+    .main-navigation ul {
+        flex-direction: column-reverse;
+    }
+}
