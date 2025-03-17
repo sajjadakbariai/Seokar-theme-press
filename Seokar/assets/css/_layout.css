@@ -1,0 +1,17 @@
+/* ساختار اصلی سایت */
+header,
+footer {
+    padding: var(--spacing-md);
+    background-color: var(--primary-color);
+    color: #fff;
+}
+
+main {
+    padding: var(--spacing-lg);
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
