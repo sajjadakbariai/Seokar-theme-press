@@ -38,5 +38,5 @@ get_header(); ?>
 <?php endwhile; else : ?>
     <p>محتوایی یافت نشد.</p>
 <?php endif; ?>
-
+<?php get_sidebar(); ?>
 <?php get_footer(); ?>
