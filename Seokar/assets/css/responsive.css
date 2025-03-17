@@ -1,11 +1,10 @@
-/* استایل‌های واکنش‌گرا */
-
+/* Responsive Styles */
 @media (max-width: 768px) {
-    .header {
-        padding: 10px;
+    .main-navigation .nav-menu {
+        flex-direction: column;
+        gap: 10px;
     }
-
-    .footer {
-        padding: 5px;
+    .header .site-title a {
+        font-size: 20px;
     }
 }
