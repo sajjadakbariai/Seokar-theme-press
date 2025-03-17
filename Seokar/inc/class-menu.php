@@ -120,3 +120,26 @@ class Menus {
         ]);
     }
 }
+public static function register_sidebars() {
+    // سایدبار اصلی
+    register_sidebar([
+        'name'          => __( 'سایدبار اصلی', 'seokar' ),
+        'id'            => 'seokar_sidebar',
+        'description'   => __( 'ابزارک‌های سایدبار را در اینجا اضافه کنید.', 'seokar' ),
+        'before_widget' => '<section id="%1$s" class="widget %2$s">',
+        'after_widget'  => '</section>',
+        'before_title'  => '<h2 class="widget-title">',
+        'after_title'   => '</h2>',
+    ]);
+
+    // سایدبار فوتر
+    register_sidebar([
+        'name'          => __( 'سایدبار فوتر', 'seokar' ),
+        'id'            => 'footer_sidebar',
+        'description'   => __( 'ابزارک‌های فوتر را در اینجا اضافه کنید.', 'seokar' ),
+        'before_widget' => '<section id="%1$s" class="footer-widget %2$s">',
+        'after_widget'  => '</section>',
+        'before_title'  => '<h2 class="footer-widget-title">',
+        'after_title'   => '</h2>',
+    ]);
+}
