@@ -1,11 +1,23 @@
-/* استایل‌های پایه قالب */
+/* ==================== */
+/* Base Styles          */
+/* ==================== */
+:root {
+    --color-primary: #0073aa;
+    --color-primary-hover: #005177;
+    --color-text: #333;
+    --color-white: #fff;
+    --color-gray: #ccc;
+    --color-social: #555;
+    --color-social-hover: #1da1f2;
+    --font-family: 'Vazir', sans-serif;
+}
 
 body {
     margin: 0;
     padding: 0;
-    font-family: 'Vazir', sans-serif;
-    background-color: #fff;
-    color: #333;
+    font-family: var(--font-family);
+    background-color: var(--color-white);
+    color: var(--color-text);
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -13,48 +25,67 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 a {
-    color: #0073aa;
+    color: var(--color-primary);
     text-decoration: none;
 }
 
 a:hover {
-    color: #005177;
+    color: var(--color-primary-hover);
 }
 
-/* Main Stylesheet for Seokar Theme */
 
-/* Import Utilities */
+/* ==================== */
+/* Import Utilities     */
+/* ==================== */
 @import url('utils/variables.css');
 @import url('utils/mixins.css');
 
-/* Import Base Styles */
+
+/* ==================== */
+/* Import Base Styles   */
+/* ==================== */
 @import url('base/reset.css');
 @import url('base/typography.css');
 
+
+/* ==================== */
 /* Import Layout Styles */
+/* ==================== */
 @import url('layout/header.css');
 @import url('layout/footer.css');
 @import url('layout/grid.css');
 
-/* Import Component Styles */
+
+/* ==================== */
+/* Import Components    */
+/* ==================== */
 @import url('components/buttons.css');
 @import url('components/forms.css');
 
-/* Import Page Specific Styles */
+
+/* ==================== */
+/* Import Page Styles   */
+/* ==================== */
 @import url('pages/home.css');
 @import url('pages/single.css');
+
+
+/* ==================== */
+/* Menu Styles          */
+/* ==================== */
+
 /* Primary Menu */
 .nav-item {
     margin: 0 15px;
 }
 
 .nav-link {
-    color: #333;
+    color: var(--color-text);
     text-decoration: none;
 }
 
 .nav-link:hover {
-    color: #0073aa;
+    color: var(--color-primary);
 }
 
 /* Footer Menu */
@@ -64,12 +95,12 @@ a:hover {
 }
 
 .footer-link {
-    color: #fff;
+    color: var(--color-white);
     text-decoration: none;
 }
 
 .footer-link:hover {
-    color: #ccc;
+    color: var(--color-gray);
 }
 
 /* Social Menu */
@@ -80,9 +111,9 @@ a:hover {
 
 .social-link {
     font-size: 18px;
-    color: #555;
+    color: var(--color-social);
 }
 
 .social-link:hover {
-    color: #1da1f2;
+    color: var(--color-social-hover);
 }
