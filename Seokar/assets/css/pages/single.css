@@ -1,0 +1,11 @@
+/* Single Post Styles */
+.single-post {
+    padding: 2rem;
+}
+
+.single-post h1 {
+    color: var(--primary-color);
+}
+
+.single-post p {
+    line-height: 1.8;
