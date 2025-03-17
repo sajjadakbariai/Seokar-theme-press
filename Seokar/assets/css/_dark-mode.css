@@ -1,0 +1,14 @@
+body.dark-mode {
+    background-color: #1f2937;
+    color: #f9fafb;
+}
+
+body.dark-mode header,
+body.dark-mode footer {
+    background-color: #111827;
+}
+
+body.dark-mode .card {
+    background-color: #374151;
+    border-color: #4b5563;
+}
