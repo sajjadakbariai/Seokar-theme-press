@@ -89,3 +89,34 @@ if ( ! class_exists( 'Seokar_Menu' ) ) {
     // Initialize the menu class.
     new Seokar_Menu();
 }
+<?php
+namespace Seokar;
+
+defined( 'ABSPATH' ) || exit;
+
+class Menus {
+
+    public static function register() {
+        add_action( 'init', [ __CLASS__, 'register_menus' ] );
+        add_action( 'widgets_init', [ __CLASS__, 'register_sidebars' ] );
+    }
+
+    public static function register_menus() {
+        register_nav_menus([
+            'primary' => __( 'Primary Menu', 'seokar' ),
+            'footer'  => __( 'Footer Menu', 'seokar' ),
+        ]);
+    }
+
+    public static function register_sidebars() {
+        register_sidebar([
+            'name'          => __( 'سایدبار اصلی', 'seokar' ),
+            'id'            => 'seokar_sidebar',
+            'description'   => __( 'ابزارک‌های سایدبار را در اینجا اضافه کنید.', 'seokar' ),
+            'before_widget' => '<section id="%1$s" class="widget %2$s">',
+            'after_widget'  => '</section>',
+            'before_title'  => '<h2 class="widget-title">',
+            'after_title'   => '</h2>',
+        ]);
+    }
+}
