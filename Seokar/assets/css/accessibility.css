@@ -1,0 +1,254 @@
+/*--------------------------------------------------------------
+# Accessibility
+--------------------------------------------------------------*/
+
+/* Hide elements visually but keep them accessible to screen readers */
+.screen-reader-text {
+    border: 0;
+    clip: rect(1px, 1px, 1px, 1px);
+    clip-path: inset(50%);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+    word-wrap: normal !important;
+}
+
+/* Focus styles for keyboard navigation */
+a:focus,
+button:focus,
+input:focus,
+textarea:focus,
+select:focus,
+details:focus,
+[tabindex]:focus {
+    outline: 3px solid var(--primary-color);
+    outline-offset: 2px;
+}
+
+/* Remove outline for mouse users but keep it for keyboard users */
+body:not(.user-is-tabbing) a:focus,
+body:not(.user-is-tabbing) button:focus,
+body:not(.user-is-tabbing) input:focus,
+body:not(.user-is-tabbing) textarea:focus,
+body:not(.user-is-tabbing) select:focus {
+    outline: none;
+}
+
+/* Improve readability for highlighted text */
+::selection {
+    background-color: var(--primary-color);
+    color: #ffffff;
+}
+
+/* Ensure images have alt text and are accessible */
+img:not([alt]) {
+    border: 3px solid var(--error-color);
+}
+
+/* Make sure form elements have labels */
+input:not([type="checkbox"]):not([type="radio"]),
+textarea,
+select {
+    display: block;
+    width: 100%;
+    margin-bottom: 1rem;
+}
+
+label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+}
+
+/* Improve accessibility for buttons */
+button {
+    cursor: pointer;
+    padding: 0.5rem 1rem;
+    border: 1px solid var(--primary-color);
+    border-radius: var(--border-radius);
+    background-color: var(--primary-color);
+    color: #ffffff;
+    transition: background-color var(--transition-speed), color var(--transition-speed);
+}
+
+button:hover {
+    background-color: var(--accent-color);
+    border-color: var(--accent-color);
+}
+
+button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* Accessibility for tables */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 1.5rem;
+}
+
+th,
+td {
+    padding: 0.75rem;
+    text-align: left;
+    border: 1px solid var(--secondary-color);
+}
+
+th {
+    background-color: var(--secondary-color);
+    font-weight: bold;
+}
+
+/* Accessibility for skip links */
+.skip-link {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    background-color: var(--primary-color);
+    color: #ffffff;
+    padding: 0.5rem 1rem;
+    z-index: 1000;
+    transition: top 0.3s;
+}
+
+.skip-link:focus {
+    top: 0;
+}
+
+/* Improve contrast for better readability */
+body {
+    color: var(--text-color);
+    background-color: var(--background-color);
+}
+
+a {
+    color: var(--primary-color);
+}
+
+a:hover {
+    color: var(--accent-color);
+}
+
+/* Accessibility for hidden content */
+.visually-hidden {
+    position: absolute !important;
+    width: 1px !important;
+    height: 1px !important;
+    padding: 0 !important;
+    margin: -1px !important;
+    overflow: hidden !important;
+    clip: rect(0, 0, 0, 0) !important;
+    white-space: nowrap !important;
+    border: 0 !important;
+}
+
+/* Accessibility for ARIA roles */
+[role="button"] {
+    cursor: pointer;
+}
+
+[role="navigation"] ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+[role="navigation"] ul li {
+    display: inline-block;
+    margin-right: 1rem;
+}
+
+/* Accessibility for modals and dialogs */
+[role="dialog"] {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: var(--background-color);
+    padding: 2rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-light);
+    z-index: 1000;
+}
+
+[role="dialog"]:focus {
+    outline: none;
+}
+
+/* Accessibility for tooltips */
+[aria-describedby] {
+    position: relative;
+}
+
+[aria-describedby]:hover::after,
+[aria-describedby]:focus::after {
+    content: attr(aria-describedby);
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--primary-color);
+    color: #ffffff;
+    padding: 0.5rem;
+    border-radius: var(--border-radius);
+    white-space: nowrap;
+    z-index: 1000;
+}
+
+/* Accessibility for forms */
+fieldset {
+    border: 1px solid var(--secondary-color);
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+legend {
+    padding: 0 0.5rem;
+    font-weight: bold;
+}
+
+/* Accessibility for lists */
+ul,
+ol {
+    margin: 0 0 1.5rem 1.5rem;
+    padding: 0;
+}
+
+li {
+    margin-bottom: 0.5rem;
+}
+
+/* Accessibility for headings */
+h1, h2, h3, h4, h5, h6 {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+}
+
+h1 {
+    font-size: 2.5rem;
+}
+
+h2 {
+    font-size: 2rem;
+}
+
+h3 {
+    font-size: 1.75rem;
+}
+
+h4 {
+    font-size: 1.5rem;
+}
+
+h5 {
+    font-size: 1.25rem;
+}
+
+h6 {
+    font-size: 1rem;
+}
