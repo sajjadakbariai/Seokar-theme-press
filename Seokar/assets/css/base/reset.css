@@ -1,0 +1,24 @@
+/* CSS Reset for Consistent Styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    line-height: 1.6;
+    font-family: var(--font-primary);
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
