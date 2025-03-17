@@ -1,0 +1,7 @@
+/* Home Page Specific Styles */
+.home-banner {
+    background-color: var(--primary-color);
+    padding: 4rem;
+    color: #fff;
+    text-align: center;
+}
