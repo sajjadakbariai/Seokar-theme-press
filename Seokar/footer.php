@@ -1,6 +1,6 @@
 <?php
 /**
- * Footer Template
+ * Footer Template for Seokar Theme
  *
  * @package Seokar
  */
@@ -8,12 +8,16 @@
 defined( 'ABSPATH' ) || exit;
 ?>
 
-<footer class="footer">
-    <div class="container">
-        <p>&copy; <?php echo date( 'Y' ); ?> - همه حقوق محفوظ است. طراحی شده توسط <a href="https://sajjadakbari.ir">سجاد اکبری</a></p>
+<footer id="colophon" class="site-footer">
+    <div class="footer-widgets">
+        <?php if ( is_active_sidebar( 'footer_sidebar' ) ) : ?>
+            <?php dynamic_sidebar( 'footer_sidebar' ); ?>
+        <?php endif; ?>
     </div>
-</footer>
 
-<?php wp_footer(); ?>
-</body>
-</html>
+    <div class="site-info">
+        <p>&copy; <?php echo date('Y'); ?> <?php bloginfo('name'); ?> - <?php _e('All Rights Reserved.', 'seokar'); ?></p>
+    </div>
+
+    <?php wp_footer(); ?>
+</footer>
