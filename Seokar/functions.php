@@ -1,17 +1,16 @@
-function seokar_enqueue_styles() {
-    // بارگذاری استایل اصلی
-    wp_enqueue_style('seokar-style', get_template_directory_uri() . 'style.css', [], '1.0.0');
+<?php
+/**
+ * Main Functions File for Seokar Theme
+ *
+ * @package Seokar
+ */
 
-    // بارگذاری استایل RTL فقط برای زبان‌های راست‌چین
-    if (is_rtl()) {
-        wp_enqueue_style('seokar-rtl', get_template_directory_uri() . '/assets/css/rtl.css', ['seokar-style'], '1.0.0');
-    }
-}
-add_action('wp_enqueue_scripts', 'seokar_enqueue_styles');
+defined( 'ABSPATH' ) || exit;
 
-// فراخوانی کلاس ثبت منو
-require_once get_template_directory() . '/inc/class-menu.php';
-// Load custom walker class.
-require_once get_template_directory() . '/inc/class-walker-menu.php';
-// Load menu cache functionality.
-require_once get_template_directory() . '/inc/menu-cache.php';
+// بارگذاری فایل Autoloader
+require_once get_template_directory() . '/inc/autoload.php';
+
+// اجرای توابع اصلی
+Seokar\Enqueue::register();
+Seokar\Menus::register();
+Seokar\Security::apply();
