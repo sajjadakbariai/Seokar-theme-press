@@ -43,3 +43,46 @@ a:hover {
 /* Import Page Specific Styles */
 @import url('pages/home.css');
 @import url('pages/single.css');
+/* Primary Menu */
+.nav-item {
+    margin: 0 15px;
+}
+
+.nav-link {
+    color: #333;
+    text-decoration: none;
+}
+
+.nav-link:hover {
+    color: #0073aa;
+}
+
+/* Footer Menu */
+.footer-item {
+    display: inline-block;
+    margin: 0 10px;
+}
+
+.footer-link {
+    color: #fff;
+    text-decoration: none;
+}
+
+.footer-link:hover {
+    color: #ccc;
+}
+
+/* Social Menu */
+.social-item {
+    display: inline-block;
+    margin: 0 5px;
+}
+
+.social-link {
+    font-size: 18px;
+    color: #555;
+}
+
+.social-link:hover {
+    color: #1da1f2;
+}
