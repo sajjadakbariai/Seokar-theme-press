@@ -24,3 +24,6 @@ defined( 'ABSPATH' ) || exit;
 
     <?php wp_footer(); ?>
 </footer>
+<?php if (seokar_get_theme_option('seokar_show_back_to_top', true)) : ?>
+    <button id="back-to-top">↑</button>
+<?php endif; ?>
