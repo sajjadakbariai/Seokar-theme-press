@@ -100,3 +100,4 @@ require_once get_template_directory() . '/classes/class-ajax-handler.php';
 require_once get_template_directory() . '/classes/class-custom-post.php';
 require_once get_template_directory() . '/cli/custom-cli-commands.php';
 require_once get_template_directory() . '/migrations/migration-setup.php';
+require_once get_template_directory() . '/vendor/autoload.php';
