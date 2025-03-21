@@ -1,15 +1,141 @@
-/* Typography Settings */
+/* === تنظیمات تایپوگرافی === */
 body {
     font-size: 16px;
+    line-height: 1.75;
+    font-family: var(--font-primary, 'IranSans', Arial, sans-serif);
+    color: var(--text-color, #333);
+    background: var(--background-color, #fff);
+    direction: rtl; /* پشتیبانی از زبان فارسی */
+}
+
+/* === تیترها === */
+h1 {
+    font-size: 2.2rem;
+    font-weight: 700;
+    line-height: 1.4;
+}
+
+h2 {
+    font-size: 1.9rem;
+    font-weight: 700;
+    line-height: 1.4;
+}
+
+h3 {
+    font-size: 1.6rem;
+    font-weight: 600;
+    line-height: 1.4;
+}
+
+h4 {
+    font-size: 1.4rem;
+    font-weight: 600;
+    line-height: 1.5;
+}
+
+h5 {
+    font-size: 1.2rem;
+    font-weight: 500;
     line-height: 1.6;
-    font-family: var(--font-primary);
 }
 
-h1, h2, h3, h4, h5, h6 {
-    font-weight: bold;
-    margin-bottom: 1rem;
+h6 {
+    font-size: 1rem;
+    font-weight: 500;
+    line-height: 1.7;
 }
 
+/* === پاراگراف‌ها === */
 p {
+    font-size: 1rem;
     margin-bottom: 1rem;
+    color: var(--paragraph-color, #444);
+}
+
+/* === لینک‌ها === */
+a {
+    color: var(--link-color, #0073e6);
+    text-decoration: none;
+    transition: color 0.3s ease-in-out;
+}
+
+a:hover {
+    color: var(--link-hover-color, #005bb5);
+    text-decoration: underline;
+}
+
+/* === لیست‌ها === */
+ul, ol {
+    padding-left: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+ul li, ol li {
+    margin-bottom: 0.5rem;
+}
+
+/* === نقل‌قول‌ها === */
+blockquote {
+    font-size: 1.2rem;
+    font-style: italic;
+    color: var(--blockquote-color, #666);
+    border-right: 4px solid var(--primary-color, #0073e6);
+    padding: 10px 20px;
+    margin: 20px 0;
+    background: var(--blockquote-bg, #f5f5f5);
+}
+
+/* === کدهای داخل متن === */
+code {
+    font-family: 'Courier New', monospace;
+    font-size: 0.9rem;
+    background: var(--code-bg, #f4f4f4);
+    padding: 2px 5px;
+    border-radius: 3px;
+}
+
+/* === سازگاری با حالت تاریک (Dark Mode) === */
+@media (prefers-color-scheme: dark) {
+    body {
+        color: #ddd;
+        background: #121212;
+    }
+
+    a {
+        color: #80b3ff;
+    }
+
+    a:hover {
+        color: #5996ff;
+    }
+
+    blockquote {
+        background: #222;
+        border-right-color: #80b3ff;
+        color: #ccc;
+    }
+
+    code {
+        background: #333;
+        color: #ffcc99;
+    }
+}
+
+/* === ریسپانسیو تایپوگرافی === */
+@media (max-width: 768px) {
+    body {
+        font-size: 15px;
+    }
+
+    h1 {
+        font-size: 1.8rem;
+    }
+
+    h2 {
+        font-size: 1.6rem;
+    }
+
+    h3 {
+        font-size: 1.4rem;
+    }
 }
