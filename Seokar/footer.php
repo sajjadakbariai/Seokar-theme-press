@@ -7,6 +7,9 @@
 
 defined( 'ABSPATH' ) || exit;
 ?>
+<?php if (seokar_get_option('seokar_show_back_to_top', true)) : ?>
+    <button id="back-to-top">↑</button>
+<?php endif; ?>
 
 <footer id="colophon" class="site-footer">
     <div class="footer-widgets">
