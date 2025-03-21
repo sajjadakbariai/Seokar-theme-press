@@ -23,3 +23,41 @@
     border-radius: 8px;
     box-shadow: var(--box-shadow);
 }
+/* افکت اسکرول */
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* استایل پاپ‌آپ */
+.popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #fff;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    display: none;
+    z-index: 1000;
+}
+.popup.show {
+    display: block;
+}
+.popup-close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+}
+
+/* تغییر رنگ هدر هنگام اسکرول */
+header.scrolled {
+    background: rgba(0, 0, 0, 0.8);
+    transition: background 0.3s;
+}
