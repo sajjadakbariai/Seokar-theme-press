@@ -32,3 +32,10 @@ function seokar_theme_setup() {
     add_theme_support('custom-background');
 }
 add_action('after_setup_theme', 'seokar_theme_setup');
+function seokar_woocommerce_support() {
+    add_theme_support('woocommerce'); // پشتیبانی از ووکامرس
+    add_theme_support('wc-product-gallery-zoom'); // قابلیت زوم روی تصویر محصول
+    add_theme_support('wc-product-gallery-lightbox'); // نمایش تصاویر در لایت‌باکس
+    add_theme_support('wc-product-gallery-slider'); // اسلایدر تصاویر محصول
+}
+add_action('after_setup_theme', 'seokar_woocommerce_support');
