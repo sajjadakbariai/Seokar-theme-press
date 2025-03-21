@@ -1,15 +1,102 @@
-/* Button Styles */
+/* === استایل‌های عمومی دکمه‌ها === */
 .button {
+    display: inline-block;
     padding: 0.75rem 1.5rem;
-    border-radius: var(--border-radius);
-    background-color: var(--primary-color);
+    border-radius: var(--border-radius, 8px);
+    background-color: var(--primary-color, #0073e6);
     color: #fff;
+    font-size: 1rem;
     font-weight: bold;
+    text-align: center;
     border: none;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: all 0.3s ease-in-out;
 }
 
+/* === افکت هاور === */
 .button:hover {
-    background-color: var(--secondary-color);
+    background-color: var(--secondary-color, #005bb5);
+    transform: translateY(-2px);
+}
+
+/* === دکمه ثانویه === */
+.button.secondary {
+    background-color: var(--secondary-color, #666);
+}
+
+.button.secondary:hover {
+    background-color: var(--secondary-hover-color, #444);
+}
+
+/* === دکمه بدون پس‌زمینه (لینک) === */
+.button.link {
+    background: none;
+    color: var(--primary-color, #0073e6);
+    border: none;
+    padding: 0;
+}
+
+.button.link:hover {
+    text-decoration: underline;
+    color: var(--secondary-color, #005bb5);
+}
+
+/* === دکمه با حاشیه (Outline) === */
+.button.outline {
+    background: transparent;
+    color: var(--primary-color, #0073e6);
+    border: 2px solid var(--primary-color, #0073e6);
+}
+
+.button.outline:hover {
+    background: var(--primary-color, #0073e6);
+    color: #fff;
+}
+
+/* === دکمه‌های کوچک و بزرگ === */
+.button.small {
+    padding: 0.5rem 1rem;
+    font-size: 0.875rem;
+}
+
+.button.large {
+    padding: 1rem 2rem;
+    font-size: 1.25rem;
+}
+
+/* === دکمه غیرفعال === */
+.button.disabled,
+.button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+/* === سازگاری با حالت تاریک (Dark Mode) === */
+@media (prefers-color-scheme: dark) {
+    .button {
+        background-color: #80b3ff;
+    }
+
+    .button:hover {
+        background-color: #5996ff;
+    }
+
+    .button.outline {
+        color: #80b3ff;
+        border-color: #80b3ff;
+    }
+
+    .button.outline:hover {
+        background-color: #80b3ff;
+        color: #000;
+    }
+
+    .button.link {
+        color: #80b3ff;
+    }
+
+    .button.link:hover {
+        color: #5996ff;
+    }
 }
