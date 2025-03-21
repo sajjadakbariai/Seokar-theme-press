@@ -1,7 +1,99 @@
-/* Footer Styles */
+/* === استایل‌های عمومی فوتر === */
 footer {
-    background-color: var(--secondary-color);
-    padding: 1rem;
-    text-align: center;
+    background-color: var(--secondary-color, #222);
     color: #fff;
+    padding: 2rem 1rem;
+    text-align: center;
+    font-size: 1rem;
+    position: relative;
+}
+
+/* === لینک‌های فوتر === */
+footer a {
+    color: #ddd;
+    text-decoration: none;
+    transition: color 0.3s ease-in-out;
+}
+
+footer a:hover {
+    color: var(--primary-color, #0073e6);
+}
+
+/* === لیست لینک‌ها در فوتر === */
+.footer-links {
+    list-style: none;
+    padding: 0;
+    margin: 1rem 0;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.footer-links li {
+    display: inline-block;
+}
+
+/* === استایل شبکه‌های اجتماعی === */
+.footer-social {
+    margin-top: 1rem;
+}
+
+.footer-social a {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    background: #444;
+    color: #fff;
+    border-radius: 50%;
+    transition: background 0.3s ease-in-out;
+}
+
+.footer-social a:hover {
+    background: var(--primary-color, #0073e6);
+}
+
+/* === کپی‌رایت === */
+.footer-bottom {
+    margin-top: 1rem;
+    font-size: 0.9rem;
+    color: #bbb;
+}
+
+/* === سازگاری با موبایل === */
+@media (max-width: 768px) {
+    .footer-links {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .footer-social {
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+    }
+}
+
+/* === حالت تاریک (Dark Mode) === */
+@media (prefers-color-scheme: dark) {
+    footer {
+        background-color: #121212;
+    }
+
+    footer a {
+        color: #aaa;
+    }
+
+    footer a:hover {
+        color: #80b3ff;
+    }
+
+    .footer-social a {
+        background: #333;
+    }
+
+    .footer-social a:hover {
+        background: #80b3ff;
+    }
 }
