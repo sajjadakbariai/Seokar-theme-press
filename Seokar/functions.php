@@ -114,3 +114,8 @@ function seokar_enqueue_woocommerce_scripts() {
     }
 }
 add_action('wp_enqueue_scripts', 'seokar_enqueue_woocommerce_scripts');
+function seokar_quick_add_to_cart_button() {
+    global $product;
+    echo '<button class="quick-add-to-cart" data-product_id="' . $product->get_id() . '">🛒 خرید سریع</button>';
+}
+add_action('woocommerce_after_shop_loop_item', 'seokar_quick_add_to_cart_button', 15);
