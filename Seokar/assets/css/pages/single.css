@@ -1,12 +1,174 @@
-/* Single Post Styles */
+/* === استایل‌های صفحه تک‌نوشته (Single Post) === */
 .single-post {
-    padding: 2rem;
+    padding: 3rem 2rem;
+    max-width: 800px;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
 }
 
+/* === عنوان مقاله === */
 .single-post h1 {
-    color: var(--primary-color);
+    font-size: 2.2rem;
+    font-weight: bold;
+    color: var(--primary-color, #0073e6);
+    margin-bottom: 1rem;
+    text-align: center;
 }
 
+/* === اطلاعات نویسنده و تاریخ انتشار === */
+.single-post .post-meta {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    font-size: 0.9rem;
+    color: var(--text-muted, #777);
+    margin-bottom: 1.5rem;
+}
+
+.single-post .post-meta i {
+    color: var(--primary-color, #0073e6);
+}
+
+/* === محتوا و پاراگراف‌ها === */
 .single-post p {
+    font-size: 1.1rem;
     line-height: 1.8;
+    color: var(--text-color, #333);
+    margin-bottom: 1rem;
+}
+
+/* === استایل تصاویر داخل پست === */
+.single-post img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin: 1.5rem 0;
+    display: block;
+}
+
+/* === استایل نقل‌قول‌ها (Blockquote) === */
+.single-post blockquote {
+    font-size: 1.2rem;
+    font-style: italic;
+    color: var(--blockquote-color, #555);
+    border-right: 4px solid var(--primary-color, #0073e6);
+    padding: 15px 20px;
+    margin: 20px 0;
+    background: #f5f5f5;
+    border-radius: 5px;
+}
+
+.single-post blockquote cite {
+    display: block;
+    font-size: 0.9rem;
+    color: var(--text-muted, #777);
+    margin-top: 10px;
+    text-align: right;
+}
+
+/* === استایل لیست‌ها === */
+.single-post ul,
+.single-post ol {
+    padding-left: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.single-post ul li,
+.single-post ol li {
+    margin-bottom: 0.5rem;
+}
+
+/* === دکمه اشتراک‌گذاری === */
+.share-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 2rem;
+}
+
+.share-buttons a {
+    display: inline-block;
+    padding: 10px 15px;
+    font-size: 1rem;
+    color: #fff;
+    border-radius: 5px;
+    transition: all 0.3s ease-in-out;
+}
+
+.share-buttons .facebook {
+    background: #1877f2;
+}
+
+.share-buttons .twitter {
+    background: #1da1f2;
+}
+
+.share-buttons .linkedin {
+    background: #0077b5;
+}
+
+.share-buttons a:hover {
+    opacity: 0.8;
+}
+
+/* === بخش نظرات === */
+.comments-section {
+    margin-top: 3rem;
+    padding: 2rem;
+    background: #f9f9f9;
+    border-radius: 8px;
+}
+
+.comments-section h2 {
+    font-size: 1.5rem;
+    color: var(--primary-color, #0073e6);
+    margin-bottom: 1rem;
+}
+
+/* === حالت تاریک (Dark Mode) === */
+@media (prefers-color-scheme: dark) {
+    .single-post {
+        background: #121212;
+        color: #ddd;
+    }
+
+    .single-post h1 {
+        color: #80b3ff;
+    }
+
+    .single-post .post-meta {
+        color: #aaa;
+    }
+
+    .single-post blockquote {
+        background: #222;
+        border-right-color: #80b3ff;
+        color: #ccc;
+    }
+
+    .comments-section {
+        background: #222;
+    }
+}
+
+/* === ریسپانسیو برای موبایل === */
+@media (max-width: 768px) {
+    .single-post {
+        padding: 2rem 1rem;
+    }
+
+    .single-post h1 {
+        font-size: 1.8rem;
+    }
+
+    .single-post p {
+        font-size: 1rem;
+    }
+
+    .share-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
 }
