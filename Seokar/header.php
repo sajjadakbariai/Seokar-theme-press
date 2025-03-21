@@ -42,3 +42,11 @@ defined( 'ABSPATH' ) || exit;
 <a href="<?php echo home_url(); ?>">
     <img src="<?php echo esc_url(seokar_get_theme_option('seokar_logo', get_template_directory_uri() . '/assets/images/logo.png')); ?>" alt="لوگوی سایت">
 </a>
+<nav>
+    <?php
+    wp_nav_menu(array(
+        'theme_location' => 'primary',
+        'menu_class'     => 'nav-menu',
+    ));
+    ?>
+</nav>
