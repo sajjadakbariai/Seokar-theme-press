@@ -1,7 +1,256 @@
-/* Home Page Specific Styles */
+/* === استایل‌های صفحه اصلی === */
+
+/* === بنر اصلی (Hero Section) === */
 .home-banner {
-    background-color: var(--primary-color);
-    padding: 4rem;
+    background-color: var(--primary-color, #0073e6);
+    padding: 5rem 2rem;
     color: #fff;
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 400px;
+    position: relative;
+}
+
+.home-banner h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    animation: fadeInDown 1s ease-in-out;
+}
+
+.home-banner p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    max-width: 600px;
+    line-height: 1.6;
+    animation: fadeInUp 1s ease-in-out;
+}
+
+/* === دکمه‌های Call To Action (CTA) === */
+.home-banner .cta-buttons {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.home-banner .cta-buttons .button {
+    padding: 1rem 2rem;
+    font-size: 1.1rem;
+    font-weight: bold;
+    border-radius: 8px;
+    transition: all 0.3s ease-in-out;
+}
+
+.home-banner .cta-buttons .button.primary {
+    background: #fff;
+    color: var(--primary-color, #0073e6);
+}
+
+.home-banner .cta-buttons .button.primary:hover {
+    background: var(--secondary-color, #005bb5);
+    color: #fff;
+}
+
+.home-banner .cta-buttons .button.secondary {
+    background: transparent;
+    border: 2px solid #fff;
+    color: #fff;
+}
+
+.home-banner .cta-buttons .button.secondary:hover {
+    background: #fff;
+    color: var(--primary-color, #0073e6);
+}
+
+/* === بخش‌های محتوا === */
+.home-section {
+    padding: 4rem 2rem;
+    text-align: center;
+}
+
+.home-section h2 {
+    font-size: 2rem;
+    color: var(--primary-color, #0073e6);
+    margin-bottom: 1rem;
+}
+
+.home-section p {
+    font-size: 1.1rem;
+    max-width: 700px;
+    margin: 0 auto;
+    color: var(--text-color, #444);
+    line-height: 1.6;
+}
+
+/* === کارت‌های خدمات === */
+.home-services {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+.service-card {
+    background: #f9f9f9;
+    padding: 2rem;
+    border-radius: 10px;
+    text-align: center;
+    width: 300px;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.service-card i {
+    font-size: 2.5rem;
+    color: var(--primary-color, #0073e6);
+    margin-bottom: 1rem;
+}
+
+.service-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: var(--primary-color, #0073e6);
+}
+
+.service-card p {
+    font-size: 1rem;
+    color: var(--text-color, #555);
+}
+
+/* === بخش نظرات کاربران === */
+.testimonials {
+    background: var(--background-light, #f1f1f1);
+    padding: 4rem 2rem;
+    text-align: center;
+}
+
+.testimonials h2 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+}
+
+.testimonial-item {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 1.5rem;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.testimonial-item p {
+    font-size: 1.1rem;
+    font-style: italic;
+    color: var(--text-color, #444);
+    line-height: 1.6;
+}
+
+.testimonial-item .author {
+    font-weight: bold;
+    margin-top: 1rem;
+}
+
+/* === انیمیشن‌های ورود === */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* === حالت تاریک (Dark Mode) === */
+@media (prefers-color-scheme: dark) {
+    .home-banner {
+        background: #121212;
+    }
+
+    .home-banner h1,
+    .home-banner p {
+        color: #ddd;
+    }
+
+    .home-banner .cta-buttons .button.primary {
+        background: #fff;
+        color: #0073e6;
+    }
+
+    .home-banner .cta-buttons .button.primary:hover {
+        background: #005bb5;
+        color: #fff;
+    }
+
+    .home-banner .cta-buttons .button.secondary {
+        border-color: #fff;
+        color: #fff;
+    }
+
+    .home-banner .cta-buttons .button.secondary:hover {
+        background: #fff;
+        color: #0073e6;
+    }
+
+    .service-card {
+        background: #222;
+        color: #ddd;
+    }
+
+    .service-card h3 {
+        color: #80b3ff;
+    }
+
+    .testimonial-item {
+        background: #222;
+        color: #ddd;
+    }
+}
+
+/* === ریسپانسیو برای موبایل === */
+@media (max-width: 768px) {
+    .home-banner {
+        padding: 3rem 1rem;
+    }
+
+    .home-banner h1 {
+        font-size: 2rem;
+    }
+
+    .home-banner p {
+        font-size: 1rem;
+    }
+
+    .home-section h2 {
+        font-size: 1.8rem;
+    }
+
+    .service-card {
+        width: 100%;
+    }
+
+    .testimonial-item {
+        width: 100%;
+    }
 }
