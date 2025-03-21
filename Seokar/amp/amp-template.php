@@ -1,5 +1,8 @@
 <!DOCTYPE html>
 <html amp>
+    <style amp-custom>
+    <?php readfile(get_template_directory() . "/amp/amp-style.css"); ?>
+    </style>
 <head>
     <meta charset="utf-8">
     <title><?php bloginfo('name'); ?> - نسخه AMP</title>
