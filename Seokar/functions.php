@@ -88,3 +88,10 @@ function seokar_enqueue_ajax_scripts() {
     ));
 }
 add_action('wp_enqueue_scripts', 'seokar_enqueue_ajax_scripts');
+function seokar_get_featured_image_webp($post_id, $size = 'full') {
+    $image_id  = get_post_thumbnail_id($post_id);
+    $image_url = wp_get_attachment_image_url($image_id, $size);
+    $webp_url  = preg_replace('/\.(jpg|jpeg|png)$/i', '.webp', $image_url);
+
+    return seokar_is_webp_supported() && file_exists(str_replace(home_url('/'), ABSPATH, $webp_url)) ? $webp_url : $image_url;
+}
