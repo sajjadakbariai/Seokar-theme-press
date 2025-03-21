@@ -131,3 +131,6 @@ if (is_admin()) {
 if (is_admin()) {
     require_once get_template_directory() . '/admin/admin-settings.php';
 }
+if (class_exists('Seokar_AMP_Support')) {
+    require_once get_template_directory() . '/amp/amp-functions.php';
+}
