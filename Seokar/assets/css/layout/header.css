@@ -1,11 +1,113 @@
-/* Header Styles */
+/* === استایل‌های عمومی هدر === */
 header {
-    background-color: var(--primary-color);
-    padding: 1rem;
+    background-color: var(--primary-color, #0073e6);
+    padding: 1rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
 }
 
+/* === استایل لوگو === */
 header .logo {
     color: #fff;
-    font-size: 1.5rem;
+    font-size: 1.8rem;
     font-weight: bold;
-}‌
+    text-decoration: none;
+    transition: color 0.3s ease-in-out;
+}
+
+header .logo:hover {
+    color: var(--secondary-color, #005bb5);
+}
+
+/* === استایل منوی ناوبری === */
+.nav-menu {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-menu li {
+    display: inline-block;
+}
+
+.nav-menu a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    transition: background 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+.nav-menu a:hover {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 5px;
+}
+
+/* === دکمه منوی موبایل (هامبورگر منو) === */
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.8rem;
+    color: #fff;
+    cursor: pointer;
+}
+
+/* === استایل نسخه موبایل === */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+    }
+
+    .nav-menu {
+        display: none;
+        flex-direction: column;
+        background: var(--primary-color, #0073e6);
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        padding: 1rem;
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .nav-menu.active {
+        display: flex;
+    }
+
+    .nav-menu a {
+        padding: 1rem;
+        text-align: center;
+        display: block;
+    }
+}
+
+/* === حالت تاریک (Dark Mode) === */
+@media (prefers-color-scheme: dark) {
+    header {
+        background-color: #121212;
+    }
+
+    header .logo {
+        color: #80b3ff;
+    }
+
+    .nav-menu a {
+        color: #ddd;
+    }
+
+    .nav-menu a:hover {
+        background: rgba(255, 255, 255, 0.1);
+    }
+
+    .menu-toggle {
+        color: #ddd;
+    }
+}
