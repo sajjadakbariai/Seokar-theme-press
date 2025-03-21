@@ -68,3 +68,14 @@ function seokar_enqueue_scripts() {
     ));
 }
 add_action('wp_enqueue_scripts', 'seokar_enqueue_scripts');
+function seokar_enqueue_admin_scripts($hook) {
+    if ($hook !== 'toplevel_page_seokar-theme-options') return;
+
+    wp_enqueue_script('seokar-admin-scripts', get_template_directory_uri() . '/assets/js/admin-scripts.js', array('jquery'), '1.0.0', true);
+
+    wp_localize_script('seokar-admin-scripts', 'seokar_admin', array(
+        'ajax_url' => admin_url('admin-ajax.php'),
+        'security' => wp_create_nonce('seokar_admin_nonce'),
+    ));
+}
+add_action('admin_enqueue_scripts', 'seokar_enqueue_admin_scripts');
