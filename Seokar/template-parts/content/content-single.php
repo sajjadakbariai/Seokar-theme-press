@@ -11,3 +11,6 @@ if (!empty($custom_field_value)) {
 }
 ?>
 <img src="<?php echo esc_url(seokar_get_featured_image_webp(get_the_ID())); ?>" alt="<?php the_title(); ?>">
+<?php if (has_post_thumbnail()) : ?>
+    <img src="<?php the_post_thumbnail_url('full'); ?>" alt="<?php the_title(); ?>">
+<?php endif; ?>
