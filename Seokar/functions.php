@@ -128,3 +128,6 @@ add_action('wp_enqueue_scripts', 'seokar_enqueue_woocommerce_styles');
 if (is_admin()) {
     require_once get_template_directory() . '/admin/admin-menu.php';
 }
+if (is_admin()) {
+    require_once get_template_directory() . '/admin/admin-settings.php';
+}
