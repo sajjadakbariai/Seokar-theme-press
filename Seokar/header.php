@@ -39,3 +39,6 @@ defined( 'ABSPATH' ) || exit;
 </a>
 <input type="text" id="search-input" placeholder="جستجو...">
 <div id="search-results"></div>
+<a href="<?php echo home_url(); ?>">
+    <img src="<?php echo esc_url(seokar_get_theme_option('seokar_logo', get_template_directory_uri() . '/assets/images/logo.png')); ?>" alt="لوگوی سایت">
+</a>
