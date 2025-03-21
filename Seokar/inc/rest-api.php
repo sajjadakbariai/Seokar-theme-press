@@ -1,73 +1,85 @@
-// **۱. افزودن مسیر REST API برای دریافت آخرین مطالب**
-function seokar_register_latest_posts_route() {
-    register_rest_route('seokar/v1', '/latest-posts/', array(
-        'methods'  => 'GET',
-        'callback' => 'seokar_get_latest_posts',
-        'permission_callback' => '__return_true'
-    ));
-}
-add_action('rest_api_init', 'seokar_register_latest_posts_route');
+<?php
+if (!defined('ABSPATH')) exit; // جلوگیری از دسترسی مستقیم
 
-function seokar_get_latest_posts() {
-    $posts = get_posts(array('numberposts' => 5, 'post_status' => 'publish'));
-    $data = array();
+class Seokar_REST_API {
 
-    foreach ($posts as $post) {
-        $data[] = array(
-            'id'    => $post->ID,
-            'title' => $post->post_title,
-            'link'  => get_permalink($post->ID)
-        );
+    public function __construct() {
+        add_action('rest_api_init', [$this, 'register_routes']);
     }
 
-    return rest_ensure_response($data);
-}
+    // **۱. ثبت APIهای سفارشی**
+    public function register_routes() {
+        register_rest_route('seokar/v1', '/latest-posts/', [
+            'methods'  => 'GET',
+            'callback' => [$this, 'get_latest_posts'],
+            'permission_callback' => '__return_true'
+        ]);
 
-// **۲. ایجاد API برای ارسال فرم تماس**
-function seokar_register_contact_api() {
-    register_rest_route('seokar/v1', '/contact/', array(
-        'methods'  => 'POST',
-        'callback' => 'seokar_handle_contact_form',
-        'permission_callback' => '__return_true'
-    ));
-}
-add_action('rest_api_init', 'seokar_register_contact_api');
+        register_rest_route('seokar/v1', '/contact/', [
+            'methods'  => 'POST',
+            'callback' => [$this, 'handle_contact_form'],
+            'permission_callback' => '__return_true'
+        ]);
 
-function seokar_handle_contact_form(WP_REST_Request $request) {
-    $name    = sanitize_text_field($request->get_param('name'));
-    $email   = sanitize_email($request->get_param('email'));
-    $message = sanitize_textarea_field($request->get_param('message'));
-
-    if (!$name || !$email || !$message) {
-        return new WP_REST_Response(['message' => 'لطفاً همه فیلدها را پر کنید.'], 400);
+        register_rest_route('seokar/v1', '/private-data/', [
+            'methods'  => 'GET',
+            'callback' => [$this, 'get_private_data'],
+            'permission_callback' => [$this, 'validate_api_key']
+        ]);
     }
 
-    wp_mail(get_option('admin_email'), "پیام از $name", $message, "From: $email");
-    
-    return new WP_REST_Response(['message' => 'پیام شما ارسال شد!'], 200);
-}
+    // **۲. دریافت آخرین نوشته‌های سایت**
+    public function get_latest_posts() {
+        $posts = get_posts(['numberposts' => 5, 'post_status' => 'publish']);
+        if (empty($posts)) {
+            return new WP_REST_Response(['message' => 'هیچ نوشته‌ای یافت نشد.'], 404);
+        }
 
-// **۳. احراز هویت برای API‌های خصوصی**
-function seokar_private_api_auth(WP_REST_Request $request) {
-    $api_key = $request->get_header('X-API-KEY');
-    $valid_key = 'seokar-secret-key';
+        $data = array_map(function ($post) {
+            return [
+                'id'    => $post->ID,
+                'title' => get_the_title($post->ID),
+                'link'  => get_permalink($post->ID),
+                'date'  => get_the_date('Y-m-d', $post->ID)
+            ];
+        }, $posts);
 
-    if ($api_key !== $valid_key) {
-        return new WP_Error('unauthorized', 'دسترسی غیرمجاز!', array('status' => 403));
+        return rest_ensure_response($data);
     }
 
-    return true;
+    // **۳. دریافت و پردازش فرم تماس**
+    public function handle_contact_form(WP_REST_Request $request) {
+        $params  = $request->get_params();
+        $name    = sanitize_text_field($params['name'] ?? '');
+        $email   = sanitize_email($params['email'] ?? '');
+        $message = sanitize_textarea_field($params['message'] ?? '');
+
+        if (empty($name) || empty($email) || empty($message)) {
+            return new WP_REST_Response(['message' => 'لطفاً همه فیلدها را پر کنید.'], 400);
+        }
+
+        $headers = ['From: ' . $name . ' <' . $email . '>'];
+        wp_mail(get_option('admin_email'), "پیام جدید از $name", $message, $headers);
+
+        return new WP_REST_Response(['message' => 'پیام شما ارسال شد!'], 200);
+    }
+
+    // **۴. احراز هویت APIهای خصوصی با کلید امنیتی**
+    public function validate_api_key(WP_REST_Request $request) {
+        $api_key = $request->get_header('X-API-KEY');
+        $valid_key = 'seokar-secret-key'; // 🔒 این مقدار را در `wp-config.php` ذخیره کنید
+
+        if (!$api_key || $api_key !== $valid_key) {
+            return new WP_Error('unauthorized', 'دسترسی غیرمجاز!', ['status' => 403]);
+        }
+        return true;
+    }
+
+    // **۵. دریافت داده‌های محافظت‌شده (API خصوصی)**
+    public function get_private_data() {
+        return rest_ensure_response(['message' => 'این یک داده محافظت‌شده است.']);
+    }
 }
 
-function seokar_register_private_api() {
-    register_rest_route('seokar/v1', '/private-data/', array(
-        'methods'  => 'GET',
-        'callback' => 'seokar_get_private_data',
-        'permission_callback' => 'seokar_private_api_auth'
-    ));
-}
-add_action('rest_api_init', 'seokar_register_private_api');
-
-function seokar_get_private_data() {
-    return rest_ensure_response(['message' => 'این یک داده محافظت‌شده است.']);
-}
+// **۶. مقداردهی اولیه کلاس هنگام بارگذاری قالب**
+new Seokar_REST_API();
