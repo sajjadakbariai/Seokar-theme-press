@@ -1,24 +1,111 @@
-/* CSS Reset for Consistent Styling */
-* {
+/* === CSS Reset برای هماهنگی استایل‌ها در تمام مرورگرها === */
+
+/* ریست کلی */
+*,
+*::before,
+*::after {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-body {
-    line-height: 1.6;
-    font-family: var(--font-primary);
-    background-color: var(--background-color);
-    color: var(--text-color);
+/* تنظیمات عمومی برای تایپوگرافی */
+html {
+    font-size: 16px;
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%; /* جلوگیری از تغییر اندازه متن در موبایل */
 }
 
+body {
+    line-height: 1.75;
+    font-family: var(--font-primary, 'IranSans', Arial, sans-serif);
+    background-color: var(--background-color, #ffffff);
+    color: var(--text-color, #333);
+    direction: rtl; /* سازگاری با زبان فارسی */
+    text-rendering: optimizeLegibility; /* بهبود خوانایی متن */
+}
+
+/* تصاویر */
 img {
     max-width: 100%;
     height: auto;
     display: block;
 }
 
+/* لینک‌ها */
 a {
     text-decoration: none;
     color: inherit;
+    transition: color 0.3s ease-in-out;
+}
+
+a:hover {
+    color: var(--link-hover-color, #0073e6);
+}
+
+/* لیست‌ها */
+ul,
+ol {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* دکمه‌ها */
+button {
+    cursor: pointer;
+    border: none;
+    background: none;
+}
+
+/* فرم‌ها */
+input,
+textarea,
+button,
+select {
+    font: inherit;
+}
+
+/* فریم‌های داخلی و ویدیوها */
+iframe {
+    border: 0;
+    max-width: 100%;
+}
+
+/* تنظیم اسکرول بار برای مرورگرهای مدرن */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--primary-color, #0073e6);
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--background-color, #f1f1f1);
+}
+
+/* === حالت تاریک (Dark Mode) === */
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: #121212;
+        color: #ddd;
+    }
+
+    a {
+        color: #80b3ff;
+    }
+
+    a:hover {
+        color: #5996ff;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background: #80b3ff;
+    }
+
+    ::-webkit-scrollbar-track {
+        background: #222;
+    }
 }
