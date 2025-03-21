@@ -27,3 +27,6 @@ Tags: seo-friendly, custom-background, custom-logo, custom-menu, featured-images
 :root {
     --primary-color: <?php echo esc_attr(seokar_get_option('seokar_primary_color', '#0073e6')); ?>;
 }
+:root {
+    --primary-color: <?php echo esc_attr(seokar_get_multisite_option('seokar_network_primary_color', '#0073e6')); ?>;
+}
