@@ -102,3 +102,16 @@ function seokar_handle_like_post() {
 }
 add_action('wp_ajax_seokar_like_post', 'seokar_handle_like_post');
 add_action('wp_ajax_nopriv_seokar_like_post', 'seokar_handle_like_post');
+function seokar_quick_add_to_cart() {
+    check_ajax_referer('seokar_ajax_nonce', 'security');
+
+    $product_id = intval($_POST['product_id']);
+    if ($product_id) {
+        WC()->cart->add_to_cart($product_id);
+        wp_send_json_success(['message' => 'محصول به سبد خرید اضافه شد!']);
+    } else {
+        wp_send_json_error(['message' => 'خطایی رخ داد.']);
+    }
+}
+add_action('wp_ajax_seokar_quick_add_to_cart', 'seokar_quick_add_to_cart');
+add_action('wp_ajax_nopriv_seokar_quick_add_to_cart', 'seokar_quick_add_to_cart');
