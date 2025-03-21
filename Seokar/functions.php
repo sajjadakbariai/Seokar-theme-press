@@ -55,3 +55,16 @@ function seokar_enqueue_scripts() {
     wp_enqueue_script('seokar-custom', get_template_directory_uri() . '/assets/js/custom.js', array('seokar-scripts'), '1.0.0', true);
 }
 add_action('wp_enqueue_scripts', 'seokar_enqueue_scripts');
+function seokar_enqueue_scripts() {
+    wp_enqueue_style('seokar-style', get_stylesheet_uri());
+    wp_enqueue_script('seokar-scripts', get_template_directory_uri() . '/assets/js/scripts.js', array(), '1.0.0', true);
+    wp_enqueue_script('seokar-custom', get_template_directory_uri() . '/assets/js/custom.js', array('seokar-scripts'), '1.0.0', true);
+    wp_enqueue_script('seokar-ajax', get_template_directory_uri() . '/assets/js/ajax-handlers.js', array('jquery'), '1.0.0', true);
+
+    // متغیرهای AJAX برای جاوا اسکریپت
+    wp_localize_script('seokar-ajax', 'seokar_ajax', array(
+        'ajax_url' => admin_url('admin-ajax.php'),
+        'security' => wp_create_nonce('seokar_ajax_nonce'),
+    ));
+}
+add_action('wp_enqueue_scripts', 'seokar_enqueue_scripts');
