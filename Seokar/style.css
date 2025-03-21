@@ -4,7 +4,7 @@ Theme URI: https://seokar.click
 Author: Sajjad Akbari
 Author URI: https://sajjadakbari.ir
 Description: قالب حرفه‌ای سئوکار برای وردپرس، طراحی شده برای بهینه‌سازی سئو و سرعت سایت.
-Version: 1.0.0
+Version: 1.0.1
 Tested up to: 6.4
 Requires PHP: 7.4
 License: GNU General Public License v2 or later
@@ -13,17 +13,11 @@ Text Domain: seokar
 Tags: seo-friendly, custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
 */
 
+/* ✅ بهینه‌سازی `@import` برای کاهش درخواست‌های HTTP */
 @import url('assets/css/style.css');
 @import url('assets/css/custom.css');
 @import url('assets/css/responsive.css');
 @import url('assets/css/variables.css');
-@import url('assets/css/_variables.css');
-@import url('assets/css/_base.css');
-@import url('assets/css/_layout.css');
-@import url('assets/css/_components.css');
-@import url('assets/css/_utilities.css');
-@import url('assets/css/_dark-mode.css');
-@import url('assets/css/_responsive.css');
 @import url('assets/css/base/reset.css');
 @import url('assets/css/base/typography.css');
 @import url('assets/css/components/buttons.css');
@@ -32,19 +26,21 @@ Tags: seo-friendly, custom-background, custom-logo, custom-menu, featured-images
 @import url('assets/css/pages/home.css');
 @import url('assets/css/pages/single.css');
 @import url('assets/css/utils/variables.css');
-@import url('assets/css/admin-style.csss');
-@import url('assets/css/responsive.css');
+@import url('assets/css/admin-style.css');
 @import url('assets/css/accessibility.css');
+
+/* ✅ بهبود مدیریت متغیرهای رنگی */
 :root {
-    --primary-color: <?php echo esc_attr(seokar_get_option('seokar_primary_color', '#0073e6')); ?>;
+    --primary-color: <?php echo esc_attr(seokar_get_option('seokar_primary_color', '#1A73E8')); ?>;
+    --secondary-color: <?php echo esc_attr(seokar_get_option('seokar_secondary_color', '#FF5722')); ?>;
+    --background-color: <?php echo esc_attr(seokar_get_option('seokar_background_color', '#F5F5F5')); ?>;
+    --text-color: <?php echo esc_attr(seokar_get_option('seokar_text_color', '#333333')); ?>;
+    --border-radius: 6px;
+    --font-primary: 'IranSans', sans-serif;
+    --font-secondary: 'Vazir', sans-serif;
 }
-:root {
-    --primary-color: <?php echo esc_attr(seokar_get_multisite_option('seokar_network_primary_color', '#0073e6')); ?>;
-}
-:root {
-    --primary-color: <?php echo esc_attr(seokar_get_theme_option('seokar_primary_color', '#0073e6')); ?>;
-}
-/* استایل‌های صفحه 404 */
+
+/* ✅ استایل‌های صفحه 404 */
 .container-404 {
     text-align: center;
     padding: 50px 20px;
@@ -52,7 +48,7 @@ Tags: seo-friendly, custom-background, custom-logo, custom-menu, featured-images
 
 .error-title {
     font-size: 28px;
-    color: #d32f2f;
+    color: var(--secondary-color);
     margin-bottom: 10px;
 }
 
@@ -76,7 +72,7 @@ Tags: seo-friendly, custom-background, custom-logo, custom-menu, featured-images
 }
 
 .quick-links a {
-    color: #1A73E8;
+    color: var(--primary-color);
     text-decoration: none;
     font-weight: bold;
 }
@@ -84,16 +80,20 @@ Tags: seo-friendly, custom-background, custom-logo, custom-menu, featured-images
 .back-home {
     display: inline-block;
     margin-top: 20px;
-    padding: 10px 20px;
-    background: #1A73E8;
+    padding: 12px 24px;
+    background: var(--primary-color);
     color: #fff;
     text-decoration: none;
-    border-radius: 5px;
+    border-radius: var(--border-radius);
     font-weight: bold;
+    transition: background 0.3s ease;
 }
+
 .back-home:hover {
     background: #0c47a1;
 }
+
+/* ✅ استایل‌های نوتیفیکیشن‌ها */
 .seokar-toast {
     position: fixed;
     bottom: 20px;
@@ -101,12 +101,13 @@ Tags: seo-friendly, custom-background, custom-logo, custom-menu, featured-images
     background: #333;
     color: #fff;
     padding: 10px 20px;
-    border-radius: 5px;
+    border-radius: var(--border-radius);
     font-size: 14px;
     opacity: 0.9;
     transition: opacity 0.5s ease-in-out;
     z-index: 9999;
 }
+
 .seokar-toast.success { background: #28a745; }
 .seokar-toast.error { background: #dc3545; }
 
@@ -129,4 +130,19 @@ Tags: seo-friendly, custom-background, custom-logo, custom-menu, featured-images
     background-color: #333;
     color: #fff;
     border: 1px solid #555;
+}
+
+/* ✅ بهینه‌سازی `Dark Mode` */
+.dark-mode .back-home {
+    background: #ffcb05;
+    color: #000;
+}
+
+.dark-mode .quick-links a {
+    color: #ffcb05;
+}
+
+.dark-mode .seokar-toast {
+    background: #ffcb05;
+    color: #000;
 }
