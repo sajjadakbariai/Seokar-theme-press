@@ -10,3 +10,4 @@ if (!empty($custom_field_value)) {
     echo '<p class="custom-field">📌 ' . esc_html($custom_field_value) . '</p>';
 }
 ?>
+<img src="<?php echo esc_url(seokar_get_featured_image_webp(get_the_ID())); ?>" alt="<?php the_title(); ?>">
