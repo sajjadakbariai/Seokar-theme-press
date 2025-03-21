@@ -79,3 +79,12 @@ function seokar_enqueue_admin_scripts($hook) {
     ));
 }
 add_action('admin_enqueue_scripts', 'seokar_enqueue_admin_scripts');
+function seokar_enqueue_ajax_scripts() {
+    wp_enqueue_script('seokar-ajax', get_template_directory_uri() . '/assets/js/ajax.js', array('jquery'), '1.0.0', true);
+
+    wp_localize_script('seokar-ajax', 'seokar_ajax', array(
+        'ajax_url' => admin_url('admin-ajax.php'),
+        'security' => wp_create_nonce('seokar_ajax_nonce'),
+    ));
+}
+add_action('wp_enqueue_scripts', 'seokar_enqueue_ajax_scripts');
