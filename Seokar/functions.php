@@ -96,3 +96,4 @@ function seokar_get_featured_image_webp($post_id, $size = 'full') {
     return seokar_is_webp_supported() && file_exists(str_replace(home_url('/'), ABSPATH, $webp_url)) ? $webp_url : $image_url;
 }
 require_once get_template_directory() . '/classes/class-theme-setup.php';
+require_once get_template_directory() . '/classes/class-ajax-handler.php';
