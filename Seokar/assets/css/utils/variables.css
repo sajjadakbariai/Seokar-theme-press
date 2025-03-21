@@ -1,12 +1,77 @@
-/* Variables for Seokar Theme */
+/* === متغیرهای قالب Seokar === */
 :root {
+    /* === رنگ‌های اصلی === */
     --primary-color: #0057b8;
-    --secondary-color: #ffcb05;
-    --text-color: #333333;
-    --background-color: #ffffff;
+    --primary-light: #0073e6;
+    --primary-dark: #003f8a;
 
+    --secondary-color: #ffcb05;
+    --secondary-light: #ffdb4d;
+    --secondary-dark: #cc9a00;
+
+    --text-color: #333;
+    --text-muted: #777;
+    --text-light: #555;
+
+    --background-color: #ffffff;
+    --background-light: #f9f9f9;
+    --background-dark: #eaeaea;
+
+    /* === تایپوگرافی === */
     --font-primary: 'IranSans', sans-serif;
     --font-secondary: 'Vazir', sans-serif;
+    --font-size-base: 16px;
+    --font-size-lg: 18px;
+    --font-size-sm: 14px;
+    --line-height-base: 1.75;
 
-    --border-radius: 4px;
+    /* === استایل‌های دکمه === */
+    --button-padding: 0.75rem 1.5rem;
+    --button-radius: 6px;
+    --button-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+
+    /* === سایه‌ها === */
+    --shadow-sm: 0px 2px 4px rgba(0, 0, 0, 0.08);
+    --shadow-md: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0px 6px 12px rgba(0, 0, 0, 0.15);
+
+    /* === فاصله‌گذاری === */
+    --spacing-sm: 8px;
+    --spacing-md: 16px;
+    --spacing-lg: 24px;
+    --spacing-xl: 32px;
+
+    /* === عرض کانتینرها === */
+    --container-width: 1200px;
+    --container-padding: 15px;
+
+    /* === گوشه‌های گرد === */
+    --border-radius: 8px;
+    --border-radius-sm: 4px;
+    --border-radius-lg: 12px;
+}
+
+/* === حالت تاریک (Dark Mode) === */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --background-color: #121212;
+        --background-light: #222;
+        --background-dark: #181818;
+
+        --text-color: #ddd;
+        --text-muted: #aaa;
+        --text-light: #bbb;
+
+        --primary-color: #80b3ff;
+        --primary-light: #99c2ff;
+        --primary-dark: #4d8aff;
+
+        --secondary-color: #ffdb4d;
+        --secondary-light: #ffe680;
+        --secondary-dark: #cc9a00;
+
+        --shadow-sm: 0px 2px 4px rgba(255, 255, 255, 0.08);
+        --shadow-md: 0px 4px 8px rgba(255, 255, 255, 0.1);
+        --shadow-lg: 0px 6px 12px rgba(255, 255, 255, 0.15);
+    }
 }
