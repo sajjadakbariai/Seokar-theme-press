@@ -101,3 +101,6 @@ require_once get_template_directory() . '/classes/class-custom-post.php';
 require_once get_template_directory() . '/cli/custom-cli-commands.php';
 require_once get_template_directory() . '/migrations/migration-setup.php';
 require_once get_template_directory() . '/vendor/autoload.php';
+if (class_exists('WooCommerce')) {
+    require_once get_template_directory() . '/woocommerce/woocommerce-functions.php';
+}
