@@ -24,3 +24,6 @@ Tags: seo-friendly, custom-background, custom-logo, custom-menu, featured-images
 @import url('assets/css/_utilities.css');
 @import url('assets/css/_dark-mode.css');
 @import url('assets/css/_responsive.css');
+:root {
+    --primary-color: <?php echo esc_attr(seokar_get_option('seokar_primary_color', '#0073e6')); ?>;
+}
