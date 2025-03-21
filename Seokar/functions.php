@@ -38,3 +38,11 @@ function seokar_enqueue_styles() {
     wp_enqueue_style('seokar-style', get_stylesheet_uri(), [], '1.0.0');
 }
 add_action('wp_enqueue_scripts', 'seokar_enqueue_styles');
+function seokar_enqueue_scripts() {
+    // بارگذاری استایل‌ها (قبلاً اضافه شد)
+    wp_enqueue_style('seokar-style', get_stylesheet_uri());
+
+    // بارگذاری اسکریپت‌ها
+    wp_enqueue_script('seokar-scripts', get_template_directory_uri() . '/assets/js/scripts.js', array(), '1.0.0', true);
+}
+add_action('wp_enqueue_scripts', 'seokar_enqueue_scripts');
