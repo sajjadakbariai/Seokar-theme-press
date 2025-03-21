@@ -34,3 +34,6 @@ defined( 'ABSPATH' ) || exit;
         </nav>
     </div>
 </header>
+<a href="<?php echo home_url(); ?>">
+    <img src="<?php echo esc_url(seokar_get_option('seokar_logo', get_template_directory_uri() . '/assets/images/logo.png')); ?>" alt="لوگوی سایت">
+</a>
