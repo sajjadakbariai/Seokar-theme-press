@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
-    console.log("Seokar Admin Scripts Loaded");
+    console.log("✅ Seokar Admin Scripts Loaded");
 
-    // **۱. نمایش پیام ذخیره شدن تنظیمات قالب**
+    // **۱. ذخیره تنظیمات قالب با AJAX**
     const saveButton = document.querySelector("#seokar-save-settings");
     if (saveButton) {
         saveButton.addEventListener("click", function (event) {
@@ -9,6 +9,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
             let formData = new FormData(document.querySelector("#seokar-settings-form"));
             formData.append("action", "seokar_save_theme_options");
+            formData.append("security", seokar_admin.nonce); // ارسال nonce برای افزایش امنیت
 
             fetch(seokar_admin.ajax_url, {
                 method: "POST",
@@ -16,9 +17,13 @@ document.addEventListener("DOMContentLoaded", function () {
             })
             .then(response => response.json())
             .then(data => {
-                alert(data.message);
+                if (data.success) {
+                    alert("✅ تنظیمات با موفقیت ذخیره شد!");
+                } else {
+                    alert("❌ خطایی رخ داد: " + data.message);
+                }
             })
-            .catch(error => console.error("Error:", error));
+            .catch(error => console.error("❌ خطا در AJAX:", error));
         });
     }
 
@@ -27,6 +32,22 @@ document.addEventListener("DOMContentLoaded", function () {
     if (colorInput) {
         colorInput.addEventListener("input", function () {
             document.querySelector("#seokar-preview").style.backgroundColor = this.value;
+        });
+    }
+
+    // **۳. نمایش هشدار قبل از خروج بدون ذخیره تغییرات**
+    let formChanged = false;
+    const settingsForm = document.querySelector("#seokar-settings-form");
+    if (settingsForm) {
+        settingsForm.addEventListener("input", () => {
+            formChanged = true;
+        });
+
+        window.addEventListener("beforeunload", (event) => {
+            if (formChanged) {
+                event.preventDefault();
+                event.returnValue = "⚠️ تغییراتی ذخیره نشده‌اند. آیا مطمئن هستید که می‌خواهید صفحه را ترک کنید؟";
+            }
         });
     }
 });
