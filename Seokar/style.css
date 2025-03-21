@@ -24,6 +24,17 @@ Tags: seo-friendly, custom-background, custom-logo, custom-menu, featured-images
 @import url('assets/css/_utilities.css');
 @import url('assets/css/_dark-mode.css');
 @import url('assets/css/_responsive.css');
+@import url('assets/css/base/reset.css');
+@import url('assets/css/base/typography.css');
+@import url('assets/css/components/buttons.css');
+@import url('assets/css/layout/footer.css');
+@import url('assets/css/layout/header.css');
+@import url('assets/css/pages/home.css');
+@import url('assets/css/pages/single.css');
+@import url('assets/css/utils/variables.css');
+@import url('assets/css/admin-style.csss');
+@import url('assets/css/responsive.css');
+@import url('assets/css/accessibility.css');
 :root {
     --primary-color: <?php echo esc_attr(seokar_get_option('seokar_primary_color', '#0073e6')); ?>;
 }
