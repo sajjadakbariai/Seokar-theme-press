@@ -78,54 +78,54 @@ Seokar/
 │       └── style.css
 │
 ├── woocommerce/                   # پشتیبانی از WooCommerce
-│   ├── woocommerce.css
-│   ├── woocommerce-functions.php
+│   ├── woocommerce.css - استایل‌های سفارشی ووکامرس
+│   ├── woocommerce-functions.php - توابع سفارشی ووکامرس
 │   └── templates/                 # فایل‌های قالب WooCommerce
 │       ├── single-product.php
-│       └── archive-product.php
+│       └── archive-product.php - قالب سفارشی آرشیو محصولات
 │
 ├── amp/
-│   ├── amp-style.css
-│   └── amp-functions.php
+│   ├── amp-style.css - استایل‌های مخصوص AMP
+│   └── amp-functions.php - توابع مخصوص AMP
 │
 ├── languages/
-│   ├── seokar.pot
-│   ├── fa_IR.mo
-│   └── en_US.mo
+│   ├── seokar.pot - فایل ترجمه اصلی
+│   ├── fa_IR.mo - ترجمه فارسی
+│   └── en_US.mo - ترجمه انگلیسی
 │
 ├── config/
-│   ├── customizer.php
-│   ├── theme-support.php
-│   └── block-patterns.php
+│   ├── customizer.php - تنظیمات Customizer
+│   ├── theme-support.php - پشتیبانی از قابلیت‌های وردپرس
+│   └── block-patterns.php - تعریف الگوهای بلوک
 │
 ├── hooks/
-│   ├── actions.php
-│   └── filters.php
+│   ├── actions.php - اکشن‌های سفارشی
+│   └── filters.php - فیلترهای سفارشی
 │
 ├── classes/
-│   ├── class-theme-setup.php
-│   ├── class-ajax-handler.php
-│   └── class-custom-post.php
+│   ├── class-theme-setup.php - کلاس تنظیمات اولیه قالب
+│   ├── class-ajax-handler.php - کلاس مدیریت AJAX
+│   └── class-custom-post.php - کلاس مدیریت پست‌تایپ‌های سفارشی
 │
 ├── tests/
-│   ├── test-sample.php
-│   └── phpunit.xml
+│   ├── test-sample.php - تست‌های واحد
+│   └── phpunit.xml - تنظیمات PHPUnit
 │
 ├── templates/
-│   └── custom-page-template.php
+│   └── custom-page-template.php - قالب صفحه سفارشی
 │
 ├── admin/
-│   ├── admin-menu.php
-│   └── admin-settings.php
+│   ├── admin-menu.php - منوهای سفارشی مدیریت
+│   └── admin-settings.php - تنظیمات بخش مدیریت
 │
 ├── cli/
-│   └── custom-cli-commands.php
+│   └── custom-cli-commands.php - دستورات WP-CLI سفارشی
 │
 ├── migrations/
-│   └── migration-setup.php
+│   └── migration-setup.php - اسکریپت‌های مهاجرت دیتابیس
 │
 ├── vendor/
-│   └── autoload.php
+│   └── autoload.php - فایل Composer Autoload
 │
 ├── functions-inc.php                  # بارگذاری فایل‌های inc
 │── functions.php - فایل اصلی توابع قالب
