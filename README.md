@@ -23,30 +23,30 @@ Seokar/
 │       └── custom-font.woff2
 │
 ├── inc/
-│   ├── setup.php
-│   ├── enqueue.php
-│   ├── custom-post-types.php
-│   ├── custom-taxonomies.php
-│   ├── theme-functions.php
-│   ├── theme-hooks.php
-│   ├── theme-options.php
-│   ├── breadcrumbs.php
-│   ├── security.php
-│   ├── seo.php
-│   ├── caching.php
-│   ├── user-roles.php
-│   ├── i18n.php
-│   ├── error-handling.php
-│   ├── optimization.php
-│   ├── debug.php
-│   ├── legacy-browsers.php
-│   ├── accessibility.php
-│   ├── multisite.php
-│   ├── custom-fields.php
-│   ├── shortcodes.php
-│   ├── ajax.php
-│   ├── webp.php
-│   └── rest-api.php
+│   ├── setup.php                  # تنظیمات اولیه قالب
+│   ├── enqueue.php                # بارگذاری فایل‌ها
+│   ├── custom-post-types.php      # پست تایپ‌های سفارشی
+│   ├── custom-taxonomies.php      # تاکسونومی‌های سفارشی
+│   ├── theme-functions.php        # توابع سفارشی
+│   ├── theme-hooks.php            # اکشن‌ها و فیلترها
+│   ├── theme-options.php          # تنظیمات اختصاصی قالب
+│   ├── breadcrumbs.php            # توابع ساخت نوار مسیر
+│   ├── security.php               # توابع امنیتی سفارشی
+│   ├── seo.php                    # توابع مربوط به SEO
+│   ├── caching.php                # توابع مربوط به کش
+│   ├── user-roles.php             # توابع مربوط به نقش‌های کاربری
+│   ├── i18n.php                   # توابع مربوط به ترجمه
+│   ├── error-handling.php         # توابع مربوط به خطاها و لاگ‌گیری
+│   ├── optimization.php           # توابع مربوط به بهینه‌سازی
+│   ├── debug.php                  # توابع مربوط به تست و دیباگ
+│   ├── legacy-browsers.php        # توابع مربوط به مرورگرهای قدیمی
+│   ├── accessibility.php          # توابع مربوط به دسترسی‌پذیری
+│   ├── multisite.php              # توابع مربوط به Multisite
+│   ├── custom-fields.php          # توابع مربوط به Custom Fields
+│   ├── shortcodes.php             # توابع مربوط به Shortcodes
+│   ├── ajax.php                   # توابع مربوط به AJAX
+│   ├── webp.php                   # توابع مربوط به WebP
+│   └── rest-api.php               # توابع مربوط به REST API
 │
 ├── template-parts/
 │   ├── header/
@@ -61,7 +61,7 @@ Seokar/
 │       ├── content-single.php
 │       ├── content-archive.php
 │       └── content-none.php
-│
+
 ├── widgets/
 │   ├── custom-widget.php
 │   └── widget-functions.php
@@ -76,10 +76,10 @@ Seokar/
 │       ├── render.php
 │       └── style.css
 │
-├── woocommerce/
+├── woocommerce/                   # پشتیبانی از WooCommerce
 │   ├── woocommerce.css
 │   ├── woocommerce-functions.php
-│   └── templates/
+│   └── templates/                 # فایل‌های قالب WooCommerce
 │       ├── single-product.php
 │       └── archive-product.php
 │
@@ -126,8 +126,8 @@ Seokar/
 ├── vendor/
 │   └── autoload.php
 │
-├── functions.php
-├── style.css
+├── functions.php                  # بارگذاری فایل‌های inc
+├── style.css                      # اطلاعات متا و استایل‌ها
 ├── theme.json
 ├── index.php
 ├── header.php
@@ -138,131 +138,13 @@ Seokar/
 ├── archive.php
 ├── search.php
 ├── 404.php
-├── screenshot.png
+└── screenshot.png                 # تصویر پیش‌نمایش قالب
 ├── readme.txt
 ├── license.txt
 ├── .gitignore
 └── .editorconfig
 ```
-در اینجا ساختار نهایی قالب وردپرس با اضافه کردن پیشنهادات و فایل‌های تکمیلی ارائه شده است. این ساختار شامل تمامی بخش‌های ضروری و پیشنهادی است که می‌تواند یک قالب حرفه‌ای و کامل را تشکیل دهد:
 
----
-
-```
-Seokar/
-├── assets/
-│   ├── css/
-│   │   ├── style.css
-│   │   ├── custom.css
-│   │   ├── admin-style.css
-│   │   ├── rtl.css
-│   │   ├── dark-mode.css
-│   │   └── accessibility.css
-│   ├── js/
-│   │   ├── scripts.js
-│   │   ├── custom.js
-│   │   ├── admin-scripts.js
-│   │   ├── ajax-handlers.js
-│   │   └── dark-mode-switcher.js
-│   ├── images/
-│   │   ├── logo.png
-│   │   ├── favicon.svg
-│   │   └── webp/                  # تصاویر WebP
-│   │       └── example.webp
-│   └── fonts/
-│       └── custom-font.woff2
-│
-├── inc/
-│   ├── setup.php                  # تنظیمات اولیه قالب
-│   ├── enqueue.php                # بارگذاری فایل‌ها
-│   ├── custom-post-types.php      # پست تایپ‌های سفارشی
-│   ├── custom-taxonomies.php      # تاکسونومی‌های سفارشی
-│   ├── theme-functions.php        # توابع سفارشی
-│   ├── theme-hooks.php            # اکشن‌ها و فیلترها
-│   ├── theme-options.php          # تنظیمات اختصاصی قالب
-│   ├── breadcrumbs.php            # توابع ساخت نوار مسیر
-│   ├── security.php               # توابع امنیتی سفارشی
-│   ├── seo.php                    # توابع مربوط به SEO
-│   ├── caching.php                # توابع مربوط به کش
-│   ├── user-roles.php             # توابع مربوط به نقش‌های کاربری
-│   ├── i18n.php                   # توابع مربوط به ترجمه
-│   ├── error-handling.php         # توابع مربوط به خطاها و لاگ‌گیری
-│   ├── optimization.php           # توابع مربوط به بهینه‌سازی
-│   ├── debug.php                  # توابع مربوط به تست و دیباگ
-│   ├── legacy-browsers.php        # توابع مربوط به مرورگرهای قدیمی
-│   ├── accessibility.php          # توابع مربوط به دسترسی‌پذیری
-│   ├── multisite.php              # توابع مربوط به Multisite
-│   ├── custom-fields.php          # توابع مربوط به Custom Fields
-│   ├── shortcodes.php             # توابع مربوط به Shortcodes
-│   ├── ajax.php                   # توابع مربوط به AJAX
-│   ├── webp.php                   # توابع مربوط به WebP
-│   └── rest-api.php               # توابع مربوط به REST API
-│
-├── template-parts/
-│   ├── header/
-│   │   ├── header-main.php
-│   │   └── header-top.php
-│   ├── footer/
-│   │   ├── footer-main.php
-│   │   └── footer-widgets.php
-│   ├── sidebar/
-│   │   └── sidebar-main.php
-│   └── content/
-│       ├── content-single.php
-│       ├── content-archive.php
-│       └── content-none.php
-│
-├── widgets/
-│   ├── custom-widget.php
-│   └── widget-functions.php
-│
-├── blocks/                        # بلوک‌های گوتنبرگ سفارشی
-│   ├── custom-block-1/
-│   │   ├── block.json
-│   │   ├── render.php
-│   │   └── style.css
-│   └── custom-block-2/
-│       ├── block.json
-│       ├── render.php
-│       └── style.css
-│
-├── woocommerce/                   # پشتیبانی از WooCommerce
-│   ├── woocommerce.css
-│   ├── woocommerce-functions.php
-│   └── templates/                 # فایل‌های قالب WooCommerce
-│       ├── single-product.php
-│       └── archive-product.php
-│
-├── amp/                           # پشتیبانی از AMP
-│   ├── amp-style.css
-│   └── amp-functions.php
-│
-├── languages/                     # فایل‌های ترجمه
-│   ├── your-theme.pot
-│   ├── fa_IR.mo                   # فایل ترجمه فارسی
-│   └── en_US.mo                   # فایل ترجمه انگلیسی
-│
-├── config/
-│   ├── customizer.php             # تنظیمات Customizer
-│   ├── theme-support.php          # افزودن پشتیبانی‌ها به قالب
-│   └── block-patterns.php         # الگوهای بلوک سفارشی
-│
-├── vendor/                        # کتابخانه‌های شخص ثالث
-│
-├── functions.php                  # بارگذاری فایل‌های inc
-├── style.css                      # اطلاعات متا و استایل‌ها
-├── theme.json                     # تنظیمات بلوک‌های گوتنبرگ
-├── index.php
-├── header.php
-├── footer.php
-├── sidebar.php
-├── single.php
-├── page.php
-├── archive.php
-├── search.php
-├── 404.php
-└── screenshot.png                 # تصویر پیش‌نمایش قالب
-```
 
 ---
 
@@ -414,84 +296,8 @@ Seokar/
 
 ---
 
-### نتیجه‌گیری:
-استفاده از این کتابخانه‌ها می‌تواند به شما کمک کند تا قالب وردپرس خود را سریع‌تر و با کیفیت بالاتری توسعه دهید. انتخاب کتابخانه‌ها به نیازهای پروژه و ترجیحات شخصی شما بستگی دارد. برای مثال، اگر به دنبال ساخت رابط کاربری واکنش‌گرا هستید، Bootstrap یا Tailwind CSS گزینه‌های خوبی هستند. اگر به انیمیشن‌های پیچیده نیاز دارید، GSAP یا AOS می‌توانند مفید باشند.
 
 
-
-
-# Seokar-theme-press
-```
-seokar/
-├── assets/
-│   ├── css/
-│   │   ├── style.css
-│   │   ├── custom.css
-│   │   └── admin-style.css
-│   ├── js/
-│   │   ├── scripts.js
-│   │   ├── custom.js
-│   │   └── admin-scripts.js
-│   ├── images/
-│   │   ├── logo.png
-│   │   └── favicon.svg
-│   └── fonts/
-│       └── custom-font.woff2
-│
-├── inc/
-│   ├── setup.php                  # تنظیمات اولیه قالب
-│   ├── enqueue.php                # بارگذاری فایل‌ها
-│   ├── custom-post-types.php      # پست تایپ‌های سفارشی
-│   ├── custom-taxonomies.php      # تاکسونومی‌های سفارشی
-│   ├── theme-functions.php        # توابع سفارشی
-│   ├── theme-hooks.php            # اکشن‌ها و فیلترها
-│   ├── theme-options.php          # تنظیمات اختصاصی قالب
-│   ├── breadcrumbs.php            # توابع ساخت نوار مسیر
-│   └── security.php               # توابع امنیتی سفارشی
-│
-├── template-parts/
-│   ├── header/
-│   │   ├── header-main.php
-│   │   └── header-top.php
-│   ├── footer/
-│   │   ├── footer-main.php
-│   │   └── footer-widgets.php
-│   ├── sidebar/
-│   │   └── sidebar-main.php
-│   └── content/
-│       ├── content-single.php
-│       ├── content-archive.php
-│       └── content-none.php
-│
-├── widgets/
-│   ├── custom-widget.php
-│   └── widget-functions.php
-│
-├── languages/
-│   └── your-theme.pot
-│
-├── config/
-│   ├── customizer.php             # تنظیمات Customizer
-│   └── theme-support.php          # افزودن پشتیبانی‌ها به قالب
-│
-├── vendor/                        # کتابخانه‌های شخص ثالث
-│
-├── functions.php                  # بارگذاری فایل‌های inc
-├── style.css                      # اطلاعات متا و استایل‌ها
-├── index.php
-├── header.php
-├── footer.php
-├── sidebar.php
-├── single.php
-├── page.php
-├── archive.php
-├── search.php
-├── 404.php
-└── screenshot.png                 # تصویر پیش‌نمایش قالب
-```
-
-
-این ساختار قالب وردپرس بسیار کامل و سازمان‌یافته است و تقریباً تمامی بخش‌های ضروری برای یک قالب حرفه‌ای را پوشش می‌دهد. با این حال، چند نکته و پیشنهاد وجود دارد که می‌تواند به بهبود و تکمیل بیشتر این ساختار کمک کند:
 
 ### 1. **فایل‌های اضافی برای پشتیبانی از بلوک‌های گوتنبرگ (Gutenberg):**
    - اگر قالب شما از بلوک‌های گوتنبرگ پشتیبانی می‌کند، بهتر است یک پوشه به نام `blocks/` ایجاد کنید و فایل‌های مربوط به بلوک‌های سفارشی را در آن قرار دهید.
