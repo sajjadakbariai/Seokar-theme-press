@@ -2,25 +2,26 @@
 Seokar/
 ├── assets/
 │   ├── css/
-│   │   ├── style.css
-│   │   ├── custom.css
-│   │   ├── admin-style.css
-│   │   ├── rtl.css
-│   │   ├── dark-mode.css
-│   │   └── accessibility.css
+│   │   ├── style.css - فایل اصلی استایل قالب (شامل اطلاعات هدر قالب)
+│   │   ├── custom.css - استایل‌های سفارشی توسعه‌دهنده
+│   │   ├── admin-style.css - استایل‌های بخش مدیریت وردپرس
+│   │   ├── rtl.css - استایل‌های راست‌به‌چپ برای زبان‌های RTL
+│   │   ├── dark-mode.css - استایل‌های مربوط به حالت تاریک
+│   │   └── accessibility.css - بهبود دسترسی‌پذیری (خوانایی، کنتراست و ...)
 │   ├── js/
-│   │   ├── scripts.js
-│   │   ├── custom.js
-│   │   ├── admin-scripts.js
-│   │   ├── ajax-handlers.js
-│   │   └── dark-mode-switcher.js
+│   │   ├── scripts.js - اسکریپت‌های اصلی قالب
+│   │   ├── custom.js - اسکریپت‌های سفارشی توسعه‌دهنده
+│   │   ├── admin-scripts.js - اسکریپت‌های بخش مدیریت
+│   │   ├── ajax-handlers.js - مدیریت درخواست‌های AJAX
+│   │   └── dark-mode-switcher.js - تغییر حالت تاریک/روشن
 │   ├── images/
-│   │   ├── logo.png
-│   │   ├── favicon.svg
+│   │   ├── logo.png - لوگوی سایت
+│   │   ├── favicon.svg - فاوآیکون سایت
 │   │   └── webp/
-│   │       └── example.webp
+│   │       └── webp/example.webp - تصاویر با فرمت WebP
 │   └── fonts/
-│       └── custom-font.woff2
+│       └── custom-font.woff2 - فونت‌های سفارشی با فرمت woff2
+│       └── vazir.woff2
 │
 ├── inc/
 │   ├── setup.php                  # تنظیمات اولیه قالب
@@ -50,21 +51,21 @@ Seokar/
 │
 ├── template-parts/
 │   ├── header/
-│   │   ├── header-main.php
-│   │   └── header-top.php
+│   │   ├── header-main.php         هدر اصلی سایت
+│   │   └── header-top.php - بخش بالایی هدر (مثل اطلاعات تماس)
 │   ├── footer/
-│   │   ├── footer-main.php
-│   │   └── footer-widgets.php
+│   │   ├── footer-main.php - فوتر اصلی سایت
+│   │   └── footer-widgets.php - ویجت‌های فوتر
 │   ├── sidebar/
-│   │   └── sidebar-main.php
+│   │   └── sidebar-main.php - سایدبار اصلی
 │   └── content/
-│       ├── content-single.php
-│       ├── content-archive.php
-│       └── content-none.php
-
+│       ├── content-single.php - محتوای تک پست‌ها
+│       ├── content-archive.php - محتوای آرشیوها
+│       └── content-none.php - نمایش وقتی محتوایی وجود ندارد
+│
 ├── widgets/
-│   ├── custom-widget.php
-│   └── widget-functions.php
+│   ├── custom-widget.php - ویجت‌های سفارشی
+│   └── widget-functions.php - توابع مربوط به ویجت‌ها
 │
 ├── blocks/
 │   ├── custom-block-1/
@@ -126,23 +127,24 @@ Seokar/
 ├── vendor/
 │   └── autoload.php
 │
-├── functions.php                  # بارگذاری فایل‌های inc
+├── functions-inc.php                  # بارگذاری فایل‌های inc
+│── functions.php - فایل اصلی توابع قالب
 ├── style.css                      # اطلاعات متا و استایل‌ها
-├── theme.json
-├── index.php
-├── header.php
-├── footer.php
-├── sidebar.php
-├── single.php
-├── page.php
-├── archive.php
-├── search.php
-├── 404.php
-└── screenshot.png                 # تصویر پیش‌نمایش قالب
-├── readme.txt
-├── license.txt
-├── .gitignore
-└── .editorconfig
+├── theme.json - تنظیمات بلوک‌های گوتنبرگ
+├── index.php - فایل اصلی ایندکس
+├── header.php - هدر اصلی
+├── footer.php - فوتر اصلی
+├── sidebar.php - سایدبار اصلی
+├── single.php - قالب تک پست
+├── page.php - قالب صفحه
+├── archive.php - قالب آرشیو
+├── search.php - قالب جستجو
+├── 404.php - قالب خطای 404
+└── screenshot.png - تصویر پیش‌نمایش قالب
+├── readme.txt - راهنمای قالب
+├── license.txt - مجوز قالب
+├── .gitignore - فایل ignore گیت
+└── .editorconfig - تنظیمات EditorConfig
 ```
 
 
